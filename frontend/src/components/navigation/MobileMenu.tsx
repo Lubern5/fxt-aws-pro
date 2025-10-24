@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -10,7 +10,7 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const DRAWER_MS = 380;
-  const EASE_GLIDE: number[] = [0.22, 1, 0.36, 1];
+  const EASE_GLIDE: number[] = [0.22, 1, 0.36, 1]; // original glide easing
   const STAGGER = 0.08;
 
   const LINKS: { label: string; href: string }[] = [
@@ -31,43 +31,23 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     return () => window.removeEventListener("keydown", onKey);
   }, [isOpen, onClose]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    onClose();
-    setTimeout(() => {
-      if (href.startsWith("/#")) {
-        const id = href.replace("/#", "");
-        const el = document.getElementById(id);
-        if (el) {
-          const yOffset = -70;
-          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: "smooth" });
-          return;
-        }
-        window.location.href = href;
-      } else {
-        window.location.href = href;
-      }
-    }, DRAWER_MS + 40);
-  };
-
   const backdropVariants = {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { duration: 0.2 } },
     exit: { opacity: 0, transition: { duration: 0.2 } },
-  };
+  } as Variants;
 
   const drawerVariants = {
     initial: { x: "100%" },
     animate: {
       x: 0,
-      transition: { duration: DRAWER_MS / 1000, ease: EASE_GLIDE },
+      transition: { duration: DRAWER_MS / 1000, ease: EASE_GLIDE as any },
     },
     exit: {
       x: "100%",
-      transition: { duration: DRAWER_MS / 1000, ease: EASE_GLIDE },
+      transition: { duration: DRAWER_MS / 1000, ease: EASE_GLIDE as any },
     },
-  };
+  } as Variants;
 
   const listVariants = {
     initial: {},
@@ -77,21 +57,21 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     exit: {
       transition: { staggerDirection: -1, staggerChildren: 0.05 },
     },
-  };
+  } as Variants;
 
   const itemVariants = {
     initial: { opacity: 0, y: 8 },
     animate: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.22, ease: "easeOut" },
+      transition: { duration: 0.22, ease: "easeOut" as any },
     },
     exit: {
       opacity: 0,
       y: 6,
-      transition: { duration: 0.18, ease: "easeIn" },
+      transition: { duration: 0.18, ease: "easeIn" as any },
     },
-  };
+  } as Variants;
 
   const ctaDelay = 0.38 + LINKS.length * STAGGER + 0.06;
 
@@ -118,14 +98,15 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             exit="exit"
           >
             <div className="flex h-full flex-col py-8 px-6">
-
               <div className="flex flex-col items-center gap-2 mb-8">
                 <img
                   src="/images/FXT-Picsart-BackgroundRemover.jpeg"
                   alt="FXT Logo"
                   className="h-14 w-14 rounded-full object-cover"
                 />
-                <span className="text-lg font-semibold text-gray-900">FXT Repair</span>
+                <span className="text-lg font-semibold text-gray-900">
+                  FXT Repair
+                </span>
               </div>
 
               <motion.span
@@ -150,7 +131,25 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     href={link.href}
                     variants={itemVariants}
                     className="hover:text-primary transition-colors"
-                    onClick={(e) => handleNavClick(e, link.href)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onClose();
+                      setTimeout(() => {
+                        if (link.href.startsWith("/#")) {
+                          const id = link.href.replace("/#", "");
+                          const el = document.getElementById(id);
+                          if (el) {
+                            const yOffset = -70;
+                            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                            window.scrollTo({ top: y, behavior: "smooth" });
+                            return;
+                          }
+                          window.location.href = link.href;
+                        } else {
+                          window.location.href = link.href;
+                        }
+                      }, DRAWER_MS + 40);
+                    }}
                   >
                     {link.label}
                   </motion.a>
@@ -172,7 +171,6 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   Book Appointment
                 </a>
               </motion.div>
-
             </div>
           </motion.aside>
         </>
