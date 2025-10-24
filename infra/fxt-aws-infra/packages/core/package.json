@@ -1,0 +1,17 @@
+{
+  "name": "@fxt-aws-infra/core",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "sst bind vitest",
+    "typecheck": "tsc -noEmit"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.1",
+    "@types/node": "^24.9.1",
+    "sst": "^3.17.21"
+  },
+  "dependencies": {
+    "zod": "^4.1.12"
+  }
+}

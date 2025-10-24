@@ -1,0 +1,15 @@
+{
+  "name": "@fxt-aws-infra/functions",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "sst bind vitest",
+    "typecheck": "tsc -noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "@types/aws-lambda": "^8.10.156",
+    "vitest": "^4.0.1",
+    "sst": "^3.17.21"
+  }
+}
