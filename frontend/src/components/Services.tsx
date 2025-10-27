@@ -1,28 +1,25 @@
-"use client";
-
 import Image from "next/image";
 
-export default function Services() {
+export default function About() {
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-
+    <section id="about" className="py-20 bg-[#fafafa]">
+      <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Title + Mascots */}
         <div className="flex items-center justify-center gap-4 mb-6">
           <Image
-             src="/images/cartoon1.png"
+            src="/images/logo1.jpeg"
             alt="FXT Mascot"
             width={80}
             height={80}
             className="object-contain"
           />
-          
-          <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C]">
-            OUR PROFESSIONAL SERVICES
+
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#B71C1C]">
+            ABOUT FXT APPLIANCE REPAIR
           </h2>
 
           <Image
-            src="/images/cartoon1.png"
+            src="/images/logo1.jpeg"
             alt="FXT Mascot"
             width={80}
             height={80}
@@ -30,71 +27,40 @@ export default function Services() {
           />
         </div>
 
-        {/* Subtitle */}
-        <p className="text-gray-600 max-w-2xl mx-auto mb-12 text-lg">
-          Expert repairs for all major household appliances — fast, reliable, and built to last.
+        {/* Intro Paragraph */}
+        <p className="text-gray-700 max-w-3xl mx-auto text-lg mb-12 leading-relaxed">
+          At FXT Appliance Repair, we bring over a decade of trusted expertise to every home we serve. 
+          Our mission is simple — to provide reliable, affordable, and professional appliance repair 
+          services that keep your household running smoothly.
         </p>
 
-        {/* Service Cards */}
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        {/* 3 Info Cards */}
+        <div className="grid gap-8 md:grid-cols-3">
           
-          {/* Refrigerator */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-            <img
-              src="/images/Fridge.jpg"
-              alt="Refrigerator Repair"
-              className="w-full h-56 object-cover rounded-xl mb-5"
-            />
-            <h3 className="text-xl font-bold text-[#B71C1C] mb-3">
-              ❄️ Refrigerator Repair
-            </h3>
+          {/* Card 1 */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+            <div className="text-[40px] mb-3">✅</div>
+            <h3 className="text-xl font-bold text-[#B71C1C] mb-3">Certified Technicians</h3>
             <p className="text-gray-600">
-              We handle temperature issues, leaks, and noises — restoring efficiency and peace of mind.
+              Every member of our team is fully trained, certified, and dedicated to ensuring your satisfaction.
             </p>
           </div>
 
-          {/* Oven & Stove */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-            <img
-              src="/images/stove.avif"
-              alt="Oven & Stove Repair"
-              className="w-full h-56 object-cover rounded-xl mb-5"
-            />
-            <h3 className="text-xl font-bold text-[#B71C1C] mb-3">
-              🔥 Oven & Stove Repair
-            </h3>
+          {/* Card 2 */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+            <div className="text-[40px] mb-3">🤝</div>
+            <h3 className="text-xl font-bold text-[#B71C1C] mb-3">Commitment to Excellence</h3>
             <p className="text-gray-600">
-              From gas to electric systems, we ensure your kitchen appliances perform at peak precision.
+              We take pride in honest service and lasting repairs — not just quick fixes.
             </p>
           </div>
 
-          {/* Washer & Dryer */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-            <img
-              src="/images/washer.jpg"
-              alt="Washer & Dryer Repair"
-              className="w-full h-56 object-cover rounded-xl mb-5"
-            />
-            <h3 className="text-xl font-bold text-[#B71C1C] mb-3">
-              🧼 Washer & Dryer Repair
-            </h3>
+          {/* Card 3 */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+            <div className="text-[40px] mb-3">👍</div>
+            <h3 className="text-xl font-bold text-[#B71C1C] mb-3">Guaranteed Work</h3>
             <p className="text-gray-600">
-              We eliminate leaks, clogs, and spin cycle issues to keep your laundry days smooth and stress-free.
-            </p>
-          </div>
-
-          {/* Dishwasher */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-            <img
-              src="/images/dishwasher.jpg"
-              alt="Dishwasher Repair"
-              className="w-full h-56 object-cover rounded-xl mb-5"
-            />
-            <h3 className="text-xl font-bold text-[#B71C1C] mb-3">
-              🍽️ Dishwasher Repair
-            </h3>
-            <p className="text-gray-600">
-              From poor drainage to stuck cycles, we restore performance so your dishes sparkle every time.
+              All services are backed by our satisfaction guarantee, because your peace of mind matters most.
             </p>
           </div>
 
