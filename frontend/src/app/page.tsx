@@ -5,7 +5,7 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import TestimonialsContact from "@/components/Testimonials";
 
-// ✅ Force Amplify + Next.js to treat this page as dynamic (SSR)
+// ✅ Force Amplify + Next.js to render this page on the server (SSR)
 export const dynamic = "force-dynamic";
 
 export default function HomePage() {
