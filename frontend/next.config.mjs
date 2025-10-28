@@ -2,7 +2,7 @@
 const nextConfig = {
   output: "standalone",
   reactStrictMode: true,
-  experimental: { serverActions: true },
+  experimental: { serverActions: {} }, // ✅ fixed type
 };
 
 export default nextConfig;
