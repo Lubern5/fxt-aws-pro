@@ -3,10 +3,11 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci --prefix frontend
+        - cd frontend
+        - npm ci
     build:
       commands:
-        - npm run build --prefix frontend
+        - npm run build
   artifacts:
     baseDirectory: frontend/.next
     files:
@@ -14,13 +15,3 @@ frontend:
   cache:
     paths:
       - frontend/node_modules/**/*
-      - frontend/.next/cache/**/*
-  customHeaders:
-    - pattern: '**/*'
-      headers:
-        - key: Cache-Control
-          value: 'public, max-age=0, must-revalidate'
-
-# 👇 This enables Amplify’s new 2025 Next.js SSR runtime
-platform:
-  framework: Next.js
