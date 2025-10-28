@@ -4,7 +4,9 @@ frontend:
     preBuild:
       commands:
         - cd frontend
+        - npm install -g npm@latest
         - npm ci
+        - npm install -D tailwindcss@4.1.16 postcss autoprefixer @tailwindcss/postcss
     build:
       commands:
         - npm run build
@@ -15,3 +17,4 @@ frontend:
   cache:
     paths:
       - frontend/node_modules/**/*
+      - frontend/.next/cache/**/*
