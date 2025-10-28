@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* ==============================
+   FXT BRAND VARIABLES
+============================== */
+
+:root {
+  --primary: #B71C1C;
+  --primary-dark: #8A1616;
+  --primary-light: #d94141;
+
+  --brand-gradient: linear-gradient(to right, #8A1616, #B71C1C);
+
+  --text-dark: #1a1a1a;
+  --text-light: #f6f6f6;
+
+  --card-bg: #f8f8f8;
+}
+
+/* ==============================
+   GLOBAL BASE
+============================== */
+
+html, body {
+  @apply bg-white text-gray-900 antialiased scroll-smooth;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+section {
+  scroll-margin-top: 90px; /* avoids header overlap */
+}
+
+/* Shadows */
+.shadow-soft { box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.shadow-hero { box-shadow: 0 6px 24px rgba(0,0,0,0.3); }
+
+/* ==============================
+   NAVBAR (for consistency)
+============================== */
+
+nav a {
+  @apply transition;
+}
+
+nav a:hover {
+  opacity: 0.85;
+}
+
+/* ==============================
+   BUTTONS (Reusable)
+============================== */
+
+.btn-primary {
+  background: var(--brand-gradient);
+  @apply text-white font-semibold px-8 py-3 rounded-full shadow-lg transition;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #7b1212, #a41414);
+}
+
+.btn-outline {
+  @apply bg-white text-[var(--primary)] font-semibold px-8 py-3 rounded-full shadow-md transition;
+}
+
+.btn-outline:hover {
+  @apply bg-white/90;
+}
+
+/* ==============================
+   SERVICE IMAGE FIX
+============================== */
+
+.service-img {
+  width: 100%;
+  max-width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* ==============================
+   FLOATING CALL BUTTON
+============================== */
+
+.call-btn {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  height: 62px;
+  width: 62px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  z-index: 999;
+  transition: 0.3s ease;
+}
+
+.call-btn:hover {
+  background: var(--primary-dark);
+}
