@@ -1,12 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'standalone', // tells Amplify it's SSR
   reactCompiler: true,
-  output: "standalone",
   experimental: {
-    serverActions: {
-      bodySizeLimit: "2mb",
-    },
+    serverActions: true,
   },
 };
 
