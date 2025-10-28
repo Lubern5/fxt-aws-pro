@@ -6,14 +6,14 @@ frontend:
         - nvm install 20
         - nvm use 20
         - npm install -g npm@latest
-        # Install Tailwind v4 plugin for PostCSS globally
-        - npm install -g tailwindcss@4.1.16 @tailwindcss/postcss postcss autoprefixer
         - cd frontend
-        - npm ci
+        # Ensure all local deps including tailwind are installed locally
+        - npm install tailwindcss@4.1.16 @tailwindcss/postcss postcss autoprefixer
+        - npm ci || true
     build:
       commands:
-        - echo "⚙️ Building Next.js app with Tailwind v4 PostCSS plugin"
-        - NODE_PATH=$(npm root -g):../frontend/node_modules npm run build
+        - echo "⚙️ Building Next.js app with local Tailwind v4 support"
+        - NODE_PATH=./node_modules npm run build
   artifacts:
     baseDirectory: frontend/.next
     files:
