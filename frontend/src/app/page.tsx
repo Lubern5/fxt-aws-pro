@@ -5,8 +5,10 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import TestimonialsContact from "@/components/Testimonials";
 
-// 👇 This makes Next.js treat the homepage as a dynamic SSR route
-export default async function HomePage() {
+// ✅ Force Amplify + Next.js to treat this page as dynamic (SSR)
+export const dynamic = "force-dynamic";
+
+export default function HomePage() {
   return (
     <div className="relative overflow-hidden">
 
