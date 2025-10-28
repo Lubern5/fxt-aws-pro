@@ -12,6 +12,8 @@ frontend:
     build:
       commands:
         - echo "Building Next.js app with Turbopack"
+        # Symlink node_modules so Turbopack can find Tailwind
+        - ln -s $(pwd)/node_modules ../node_modules || true
         - npm run build
   artifacts:
     baseDirectory: frontend/.next
