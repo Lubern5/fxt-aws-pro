@@ -8,13 +8,14 @@ frontend:
         - cd frontend
         - npm install -g npm@latest
         - npm ci
+        # Install dependencies locally for Amplify build
         - npm install tailwindcss@4.1.16 postcss autoprefixer
     build:
       commands:
         - echo "Building Next.js app with Turbopack"
-        # Symlink node_modules so Turbopack can find Tailwind
-        - ln -s $(pwd)/node_modules ../node_modules || true
-        - npm run build
+        # Copy node_modules up one level so Turbopack can resolve them
+        - cp -r node_modules ../node_modules || true
+        - NODE_PATH=../node_modules npm run build
   artifacts:
     baseDirectory: frontend/.next
     files:
