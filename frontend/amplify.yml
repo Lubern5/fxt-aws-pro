@@ -7,11 +7,15 @@ frontend:
         - npm ci
     build:
       commands:
+        # Force Next.js SSR detection
+        - echo "AMPLIFY_NEXT_JS_APP=true" >> .env
         - npm run build
   artifacts:
-    baseDirectory: frontend/.next
+    # Point directly to Next.js build output
+    baseDirectory: .next
     files:
       - '**/*'
   cache:
     paths:
       - frontend/node_modules/**/*
+      - .next/cache/**/*
