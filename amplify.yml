@@ -10,11 +10,11 @@ applications:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: .next
+        baseDirectory: frontend/.next/standalone
         files:
           - '**/*'
       customHeaders:
         - pattern: '**/*'
           headers:
             - key: Cache-Control
-              value: 'public, max-age=0, must-revalidate'
+              value: public, max-age=0, must-revalidate
