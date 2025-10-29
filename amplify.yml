@@ -7,13 +7,15 @@ frontend:
         - nvm use 20
         - npm install -g npm@latest
         - cd frontend
-        # Ensure all local deps including tailwind are installed locally
+        # Install Tailwind + PostCSS deps locally
         - npm install tailwindcss@4.1.16 @tailwindcss/postcss postcss autoprefixer
         - npm ci || true
     build:
       commands:
         - echo "⚙️ Building Next.js app with local Tailwind v4 support"
-        - NODE_PATH=./node_modules npm run build
+        # ✅ Run build explicitly inside frontend folder
+        - cd frontend
+        - NODE_PATH=$(pwd)/node_modules npm run build
   artifacts:
     baseDirectory: frontend/.next
     files:
