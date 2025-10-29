@@ -1,8 +1,0 @@
-{
-  "hosting": {
-    "amplifyhosting": {
-      "providerPlugin": "awscloudformation",
-      "service": "AmplifyHosting"
-    }
-  }
-}
