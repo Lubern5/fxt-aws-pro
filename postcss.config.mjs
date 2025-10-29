@@ -1,7 +1,7 @@
-// postcss.config.mjs
-export default {
+// frontend/postcss.config.js
+module.exports = {
   plugins: {
-    "@tailwindcss/postcss": {},  // ✅ new plugin name for Next.js 16 / Tailwind 4+
+    tailwindcss: { config: './tailwind.config.js' },
     autoprefixer: {},
   },
 };
