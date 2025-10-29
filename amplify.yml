@@ -19,6 +19,6 @@ applications:
             - key: Cache-Control
               value: public, max-age=0, must-revalidate
       customRules:
-        - source: "/<*>"
+        - source: "</^[^.]+$|\\.(?!(css|js|map|json|png|jpg|jpeg|gif|svg|ico|woff|woff2)$)([^.]+$)/>"
           target: "/"
           status: "200"
