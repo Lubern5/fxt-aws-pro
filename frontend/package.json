@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "npm install @tailwindcss/postcss@^4.1.16 postcss autoprefixer"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",

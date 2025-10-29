@@ -8,9 +8,10 @@ frontend:
         - npm install -g npm@latest
         - cd frontend
         - npm ci
+        - npm run postinstall
     build:
       commands:
-        - echo "🚀 Building Next.js app with Tailwind v4"
+        - echo "🚀 Building Next.js app (Turbopack + Tailwind)"
         - NODE_PATH=$(pwd)/node_modules npm run build
   artifacts:
     baseDirectory: frontend/.next
