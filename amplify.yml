@@ -7,12 +7,13 @@ frontend:
         - nvm use 20
         - npm install -g npm@latest
         - cd frontend
-        - npm install tailwindcss@4.1.16 @tailwindcss/postcss postcss autoprefixer
         - npm ci || true
     build:
       commands:
-        - echo "⚙️ Building Next.js app with local Tailwind v4 support"
-        # ❌ remove cd frontend (Amplify is already in that folder)
+        - echo "⚙️ Installing Tailwind + PostCSS locally before Next build"
+        - cd frontend
+        - npm install tailwindcss@4.1.16 @tailwindcss/postcss postcss autoprefixer
+        - echo "🚀 Building Next.js app"
         - NODE_PATH=$(pwd)/node_modules npm run build
   artifacts:
     baseDirectory: frontend/.next
