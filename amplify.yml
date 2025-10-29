@@ -7,8 +7,8 @@ frontend:
         - nvm use 20
         - npm install -g npm@latest
         - cd frontend
-        - npm ci
-        - npm run postinstall
+        # Install all deps (including devDependencies)
+        - npm install --include=dev
     build:
       commands:
         - echo "🚀 Building Next.js app (Turbopack + Tailwind)"
