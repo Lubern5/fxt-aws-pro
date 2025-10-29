@@ -5,9 +5,6 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import TestimonialsContact from "@/components/Testimonials";
 
-// ✅ Force Amplify + Next.js to render this page on the server (SSR)
-export const dynamic = "force-dynamic";
-
 export default function HomePage() {
   return (
     <div className="relative overflow-hidden">
@@ -37,7 +34,7 @@ export default function HomePage() {
             washers, and more — ensuring your home runs smoothly.
           </p>
 
-          {/* CTA Button */}
+          {/* CTA Button (updated link) */}
           <a
             href="https://pro.housecallpro.com/app"
             target="_blank"
@@ -48,7 +45,7 @@ export default function HomePage() {
           </a>
         </motion.div>
 
-        {/* Floating Call Button */}
+        {/* Floating Call Button (unchanged) */}
         <a
           href="tel:9786093758"
           className="absolute left-4 bottom-4 md:left-8 md:bottom-8 h-14 w-14 rounded-full bg-[#B71C1C] shadow-lg grid place-items-center hover:bg-[#8A1616] transition"
@@ -65,6 +62,7 @@ export default function HomePage() {
 
       {/* ========================= TESTIMONIALS + CONTACT ========================= */}
       <TestimonialsContact />
+
     </div>
   );
 }

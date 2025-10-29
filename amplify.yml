@@ -3,16 +3,12 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 20
-        - nvm use 20
-        - npm install -g npm@latest
         - cd frontend
-        # Install all deps (including devDependencies)
-        - npm install --include=dev
+        - npm ci
     build:
       commands:
-        - echo "🚀 Building Next.js app (Turbopack + Tailwind)"
-        - NODE_PATH=$(pwd)/node_modules npm run build
+        - cd frontend
+        - npm run build
   artifacts:
     baseDirectory: frontend/.next
     files:
@@ -20,4 +16,3 @@ frontend:
   cache:
     paths:
       - frontend/node_modules/**/*
-      - frontend/.next/cache/**/*
