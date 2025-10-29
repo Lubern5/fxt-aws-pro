@@ -10,16 +10,10 @@ applications:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: .next/standalone
+        baseDirectory: .next
         files:
           - '**/*'
-      customHeaders:
-        - pattern: '**/*'
-          headers:
-            - key: Cache-Control
-              value: public, max-age=0, must-revalidate
       customRules:
-        # Prevent Amplify from returning 404 for dynamic routes
         - source: "/<*>"
           target: "/index.html"
           status: "200"
