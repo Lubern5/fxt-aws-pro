@@ -16,6 +16,5 @@ applications:
       cache:
         paths:
           - node_modules/**/*
-    appRoot: frontend
     environment:
       NEXT_DISABLE_TELEMETRY: 1
