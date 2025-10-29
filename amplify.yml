@@ -3,8 +3,6 @@ frontend:
   phases:
     preBuild:
       commands:
-        - echo "📁 Listing frontend folder contents..."
-        - ls -la frontend
         - cd frontend
         - npm ci
     build:
@@ -17,3 +15,7 @@ frontend:
   cache:
     paths:
       - frontend/node_modules/**/*
+  redirects:
+    - source: "/<*>"
+      target: "/"
+      status: "200"
