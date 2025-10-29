@@ -1,0 +1,11 @@
+{
+  "type": "AWS::Amplify::Hosting",
+  "version": "1.0",
+  "properties": {
+    "appName": "fxtawspro",
+    "hostingType": "AmplifyHosting",
+    "framework": "NextJs",
+    "platform": "SSR",
+    "region": "us-east-1"
+  }
+}
