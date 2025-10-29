@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: "standalone", // ✅ this keeps server support
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export",           // ✅ new syntax replaces "next export"
+  images: { unoptimized: true },
   reactStrictMode: true,
 };
 
