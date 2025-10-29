@@ -26,9 +26,9 @@ export default function Services() {
   return (
     <section id="services" className="services">
       <div className="services-header">
-        <img src="/images/logo1.jpeg" alt="FXT Logo Left" className="services-logo" />
+        <img src="/images/car1.png" alt="FXT Logo Left" className="services-logo" />
         <h2>Our Professional Services</h2>
-        <img src="/images/logo1.jpeg" alt="FXT Logo Right" className="services-logo" />
+        <img src="/images/car1.png" alt="FXT Logo Right" className="services-logo" />
       </div>
 
       <p className="services-intro about-text">

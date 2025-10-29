@@ -10,7 +10,7 @@ export default function TestimonialsContact() {
         {/* Title + Mascots */}
         <div className="flex items-center justify-center gap-4 mb-6">
           <Image
-            src="/images/cartoon1.png"
+            src="/images/car1.png"
             alt="FXT Mascot"
             width={80}
             height={80}
@@ -22,7 +22,7 @@ export default function TestimonialsContact() {
           </h2>
 
           <Image
-            src="/images/cartoon1.png"
+            src="/images/car1.png"
             alt="FXT Mascot"
             width={80}
             height={80}
