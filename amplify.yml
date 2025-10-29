@@ -18,3 +18,6 @@ applications:
           headers:
             - key: Cache-Control
               value: public, max-age=0, must-revalidate
+      customRules:
+        # ✅ Ensures all routes resolve to your SSR app (fixes refresh 404s)
+        - source: "/<*>"
