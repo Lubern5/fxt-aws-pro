@@ -1,6 +1,6 @@
 version: 1
 applications:
-  - appRoot: frontend
+  - appRoot: .
     frontend:
       phases:
         preBuild:
@@ -10,7 +10,7 @@ applications:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: frontend/out
+        baseDirectory: out
         files:
           - '**/*'
       customRules:
