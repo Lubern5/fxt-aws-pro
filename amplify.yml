@@ -5,12 +5,13 @@ applications:
       phases:
         preBuild:
           commands:
+            - cd frontend
             - npm ci
         build:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: frontend/.next/standalone
+        baseDirectory: .next/standalone
         files:
           - '**/*'
       customHeaders:
@@ -19,5 +20,6 @@ applications:
             - key: Cache-Control
               value: public, max-age=0, must-revalidate
       customRules:
-        # ✅ Ensures all routes resolve to your SSR app (fixes refresh 404s)
         - source: "/<*>"
+          target: "/"
+          status: "200"
