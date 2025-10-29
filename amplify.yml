@@ -10,7 +10,7 @@ applications:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: .next
+        baseDirectory: .next/standalone
         files:
           - '**/*'
       customHeaders:
@@ -19,6 +19,7 @@ applications:
             - key: Cache-Control
               value: public, max-age=0, must-revalidate
       customRules:
-        - source: "</^[^.]+$|\\.(?!(css|js|map|json|png|jpg|jpeg|gif|svg|ico|woff|woff2)$)([^.]+$)/>"
-          target: "/"
+        # Prevent Amplify from returning 404 for dynamic routes
+        - source: "/<*>"
+          target: "/index.html"
           status: "200"
