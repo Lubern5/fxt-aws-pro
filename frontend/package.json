@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "postinstall": "npm install @tailwindcss/postcss@^4.1.16 postcss autoprefixer"
+    "postinstall": "npm install postcss autoprefixer"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",
@@ -17,7 +17,6 @@
     "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
