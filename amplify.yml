@@ -11,7 +11,7 @@ frontend:
     build:
       commands:
         - echo "⚙️ Installing Tailwind + PostCSS locally before Next build"
-        - cd frontend
+        # ✅ Remove the second 'cd frontend' — Amplify is already there
         - npm install tailwindcss@4.1.16 @tailwindcss/postcss postcss autoprefixer
         - echo "🚀 Building Next.js app"
         - NODE_PATH=$(pwd)/node_modules npm run build
