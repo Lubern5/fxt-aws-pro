@@ -10,7 +10,7 @@ export default function About() {
         {/* Title + Mascots */}
         <div className="flex items-center justify-center gap-4 mb-6">
           <Image
-            src="/images/car1.png"
+            src="/images/car2.jpeg"
             alt="FXT Mascot"
             width={80}
             height={80}
@@ -22,7 +22,7 @@ export default function About() {
           </h2>
 
           <Image
-            src="/images/car1.png"
+            src="/images/car2.jpeg"
             alt="FXT Mascot"
             width={80}
             height={80}
